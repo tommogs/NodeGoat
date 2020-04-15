@@ -29,3 +29,14 @@ jobs:
     - run: npm test
       env:
         CI: true
+    - uses: montudor/action-zip@v0.1.0
+      with:
+        args: zip -qq -r ./webgoatnode.zip /home/runner/work/NodeGoat/NodeGoat
+
+    - name: Get the Java API wrapper
+      uses: wei/curl@master
+      with:
+        args: -sS -o VeracodeJavaAPI.jar "https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/19.6.5.8/vosp-api-wrappers-java-19.6.5.8.jar"
+
+    - name: Start SAST scan
+      run: java -jar VeracodeJavaAPI.jar -action uploadandscan -vid ${{ secrets.VERACODE_API_ID }} -vkey ${{ secrets.VERACODE_API_SECRET }} -appname github_webgoat_node -createprofile false -version "GitHub Actions job $GITHUB_RUN_NUMBER" -filepath /home/runner/work/NodeGoat/NodeGoat/webgoatnode.zip
