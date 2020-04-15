@@ -29,13 +29,13 @@ jobs:
     - run: npm test
       env:
         CI: true
-#    - uses: montudor/action-zip@v0.1.0
-#      with:
-#        args: zip -qq -r ./webgoatnode.zip . -i /home/runner/work/NodeGoat/NodeGoat
+    - uses: montudor/action-zip@v0.1.0
+      with:
+        args: zip -qq -r ./webgoatnode.zip ./
     - uses: actions/upload-artifact@v1
       with:
         name: my-artifact
-        path: /home/runner/work/NodeGoat/NodeGoat
+        path: ./webgoatnode.zip
     - name: Get the Java API wrapper
       uses: wei/curl@master
       with:
