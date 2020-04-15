@@ -35,7 +35,7 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: my-artifact
-        path: path/to/artifact
+        path: ./webgoatnode.zip
     - name: Get the Java API wrapper
       uses: wei/curl@master
       with:
