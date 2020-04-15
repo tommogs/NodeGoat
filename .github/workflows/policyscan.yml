@@ -31,7 +31,7 @@ jobs:
         CI: true
     - uses: montudor/action-zip@v0.1.0
       with:
-        args: zip -qq -r ./webgoatnode.zip /home/runner/work/NodeGoat/NodeGoat
+        args: zip -qq -r ./webgoatnode.zip . -i /home/runner/work/NodeGoat/NodeGoat
 
     - name: Get the Java API wrapper
       uses: wei/curl@master
