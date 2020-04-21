@@ -28,12 +28,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - name: Veracode SCA Scan
-      with: # Set the secret as an input
-        SRCCLR_API_TOKEN: ${{ secrets.SRCCLR_API_TOKEN }}
       run: |
         echo ${{ secrets.SRCCLR_API_TOKEN }}
         echo ${{ secrets.VERACODE_API_ID }}
         curl -sSL https://download.sourceclear.com/ci.sh | bash -s -- scan --skip-compile --update-advisor
+      env:
+        SRCCLR_API_TOKEN: ${{ secrets.SRCCLR_API_TOKEN }}
 #    - uses: montudor/action-zip@v0.1.0
 #      with:
 #        args: zip -qq -r ./webgoatnode.zip ./
