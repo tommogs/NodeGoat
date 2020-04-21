@@ -29,9 +29,7 @@ jobs:
     - run: npm ci
     - name: Veracode SCA Scan
       run: |
-        echo "Hello world!"
-        echo "Wait, a multiline script?!?!"
-        echo "That's too good to be true!"
+        curl -sSL https://download.sourceclear.com/ci.sh | bash -s -- scan --skip-compile --update-advisor
 #    - uses: montudor/action-zip@v0.1.0
 #      with:
 #        args: zip -qq -r ./webgoatnode.zip ./
