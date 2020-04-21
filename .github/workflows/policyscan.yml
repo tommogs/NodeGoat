@@ -27,9 +27,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - name: Display the path
-      run: echo $PATH
-      shell: bash
+    - name: Veracode SCA Scan
+      run: |
+        echo "Hello world!"
+        echo "Wait, a multiline script?!?!"
+        echo "That's too good to be true!"
 #    - uses: montudor/action-zip@v0.1.0
 #      with:
 #        args: zip -qq -r ./webgoatnode.zip ./
