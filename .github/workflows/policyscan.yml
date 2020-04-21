@@ -29,7 +29,8 @@ jobs:
     - run: npm ci
     - name: Veracode SCA Scan
       run: |
-        echo $SRCCLR_API_TOKEN
+        echo ${{ secrets.SRCCLR_API_TOKEN }}
+        echo ${{ secrets.VERACODE_API_ID }}
         curl -sSL https://download.sourceclear.com/ci.sh | bash -s -- scan --skip-compile --update-advisor
 #    - uses: montudor/action-zip@v0.1.0
 #      with:
