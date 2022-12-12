@@ -6,11 +6,11 @@
   "main": "server.js",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.15.1",
+    "body-parser": "^1.20.1",
     "consolidate": "^0.14.1",
     "csurf": "^1.8.3",
     "dont-sniff-mimetype": "^1.0.0",
-    "express": "^4.13.4",
+    "express": "^4.18.2",
     "express-session": "^1.13.0",
     "forever": "^2.0.0",
     "helmet": "^2.0.0",
@@ -51,12 +51,12 @@
     "grunt-jsbeautifier": "^0.2.12",
     "grunt-mocha-test": "^0.12.7",
     "grunt-npm-install": "^0.3.0",
-    "grunt-retire": "^0.3.12",
+    "grunt-retire": "^1.0.9",
     "mocha": "^2.4.5",
     "nodemon": "^1.19.1",
     "selenium-webdriver": "^2.53.2",
     "should": "^8.3.1",
-    "zaproxy": "^0.2.0"
+    "zaproxy": "^1.0.1"
   },
   "repository": "https://github.com/OWASP/NodejsGoat",
   "license": "Apache 2.0"
